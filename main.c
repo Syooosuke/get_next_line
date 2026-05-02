@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syokota <syokota@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/01 20:30:16 by syokota           #+#    #+#             */
-/*   Updated: 2026/05/02 20:04:29 by syokota          ###   ########.fr       */
+/*   Created: 2026/05/02 19:51:16 by syokota           #+#    #+#             */
+/*   Updated: 2026/05/02 20:06:10 by syokota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <stdlib.h>
-# include <unistd.h>
+#include "get_next_line.h"
+#include "fcntl.h"
+#include "stdio.h"
 
-size_t	ft_strlen(const char *s);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strjoin(char *s1, char *s2);
-char	*get_next_line(int fd);
+int	main(void)
+{
+	int		fd;
+	char	*line;
 
-# endif
+	fd = open("test.txt", O_RDONLY);
+	if (fd == -1)
+	{
+		printf("ファイルのオープンに失敗しました。");
+		return (1);
+	}
+	while ((line = get_next_line(fd)) != NULL)
+	{
+		printf("%s", line);
+		free(line);
+	}
+	close(fd);
+	return (0);
+}

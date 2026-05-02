@@ -6,7 +6,7 @@
 /*   By: syokota <syokota@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 20:33:31 by syokota           #+#    #+#             */
-/*   Updated: 2026/05/01 20:44:14 by syokota          ###   ########.fr       */
+/*   Updated: 2026/05/02 18:53:55 by syokota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,9 @@ char	*ft_strjoin(char *s1, char *s2)
 		s1[0] = '\0';
 	}
 	if (!s1 || !s2)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (!str)
 		return (NULL);
 	i = -1;
 	while (s1[++i])
