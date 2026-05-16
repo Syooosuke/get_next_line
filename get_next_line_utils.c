@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: syokota <syokota@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/01 20:33:31 by syokota           #+#    #+#             */
-/*   Updated: 2026/05/02 18:53:55 by syokota          ###   ########.fr       */
+/*   Created: 2026/05/15 14:41:12 by syokota           #+#    #+#             */
+/*   Updated: 2026/05/15 15:31:00 by syokota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	len;
+	size_t	i;
 
-	len = 0;
+	i = 0;
 	if (!s)
 		return (0);
-	while (s[len])
-		len++;
-	return (len);
+	while (s[i])
+		i++;
+	return (i);
 }
 
 char	*ft_strchr(const char *s, int c)
@@ -37,7 +37,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if ((char)c == '\0')
+	if (c == 0)
 		return ((char *)&s[i]);
 	return (NULL);
 }
@@ -48,25 +48,25 @@ char	*ft_strjoin(char *s1, char *s2)
 	size_t	i;
 	size_t	j;
 
+	i = -1;
+	j = 0;
 	if (!s1)
 	{
-		s1 = (char *)malloc(sizeof(char));
+		s1 = malloc(1);
 		if (!s1)
 			return (NULL);
-		s1[0] = '\0';
+		s1[0] = 0;
 	}
 	if (!s1 || !s2)
 		return (NULL);
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	str = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!str)
 		return (NULL);
-	i = -1;
 	while (s1[++i])
 		str[i] = s1[i];
-	j = 0;
 	while (s2[j])
 		str[i++] = s2[j++];
-	str[i] = '\0';
+	str[i] = 0;
 	free(s1);
 	return (str);
 }
