@@ -1,3 +1,0 @@
-Hello, world!
-This is a get_next_line test.
-End of file test.

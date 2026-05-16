@@ -6,7 +6,7 @@
 /*   By: syokota <syokota@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 20:30:16 by syokota           #+#    #+#             */
-/*   Updated: 2026/05/02 20:04:29 by syokota          ###   ########.fr       */
+/*   Updated: 2026/05/15 14:39:02 by syokota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,4 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char *s1, char *s2);
 char	*get_next_line(int fd);
 
-# endif
+#endif
