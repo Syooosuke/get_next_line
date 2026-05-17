@@ -6,7 +6,7 @@
 /*   By: syokota <syokota@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 13:52:55 by syokota           #+#    #+#             */
-/*   Updated: 2026/05/16 19:47:58 by syokota          ###   ########.fr       */
+/*   Updated: 2026/05/17 12:42:37 by syokota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,6 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-
 // #include "get_next_line.h"
 // #include <fcntl.h>
 // #include <stdio.h>
@@ -144,4 +143,3 @@ char	*get_next_line(int fd)
 // 		close(fd);
 // 	return (0);
 // }
-
