@@ -141,6 +141,7 @@ char	*get_next_line(int fd)
 // 		if (line == NULL)
 // 			break ;
 // 		printf("%s\n", line);
+// 		free(line);
 // 	}
 // 	if (fd != 0)
 // 		close(fd);
