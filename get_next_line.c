@@ -86,7 +86,10 @@ static char	*clean_stash(char *stash)
 	}
 	new_stash = (char *)malloc(ft_strlen(stash) - i + 1);
 	if (!new_stash)
+	{
+		free(stash);
 		return (NULL);
+	}
 	while (stash[++i])
 		new_stash[j++] = stash[i];
 	new_stash[j] = '\0';
